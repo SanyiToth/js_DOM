@@ -1,0 +1,27 @@
+#audi {
+    width: 50%;
+}
+
+#btn {
+    height: 20px;
+    width: 100px;
+}
+
+.text span {
+    background-color: yellow;
+}
+
+#clickme {
+    display: none;
+    width: 10%;
+}
+
+#box {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+body {
+    background-color: white;
+}
