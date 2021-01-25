@@ -1,42 +1,40 @@
 .grid-container {
-    margin: 100px auto;
-    width: 20%;
+    margin: 0 auto;
     display: grid;
+    width: 300px;
     grid-template-columns: auto auto auto;
-    background-color: #2196F3;
     padding: 10px;
+    background-color: blue;
 }
 
-.btn {
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    outline: none;
     padding: 20px;
     font-size: 30px;
-    text-align: center;
     cursor: pointer;
+    height: 60px;
 }
 
-.numbers {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-    cursor: pointer;
-
-}
 
 #display {
+    min-width: 100px;
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: right;
+    height: 50px;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
+    color: darkblue;
 }
 
-#equal {
+
+#\= {
     grid-column-start: 1;
     grid-column-end: 4;
 }

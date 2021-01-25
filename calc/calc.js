@@ -1,34 +1,31 @@
-let elDisplay = document.getElementById("display")
-let elNumbers = document.querySelectorAll(".numbers")
-let elOperator = document.querySelectorAll(".btn")
-let firstNumber;
-let secondNumber;
-let result;
+const elDisplay = document.getElementById("display")
+const elBtns = document.querySelectorAll("button")
 
-for (let i = 0; i < elNumbers.length; i++) {
-    elNumbers[i].addEventListener("click", function () {
-        if (elDisplay.innerText !== '0') {
-            elDisplay.innerText = elDisplay.innerText + elNumbers[i].innerText
-            firstNumber = Number.parseInt(elDisplay.innerText)
-        } else {
-            elDisplay.innerText = elNumbers[i].innerText
-        }
-        if (elNumbers[i].innerText === '+') {
-            console.log(firstNumber + ' + ')
-            elDisplay.innerText = '0'
-        }
-        if (elNumbers[i].innerText === '=') {
-            secondNumber = elDisplay.innerText
-            console.log(secondNumber)
-            elDisplay.innerText = Number.parseInt(secondNumber) + Number.parseInt(firstNumber)
-        }
-    })
+console.log('kijelzo' + elDisplay)
+console.log('gombok' + elBtns)
 
+elBtns.forEach(function (button) {
+    button.addEventListener('click', calculate)
+})
+
+
+function calculate(event) {
+    // current clicked buttons value
+    const clickedButtonValue = event.target.value
+    if (clickedButtonValue === '=') {
+        // check if the display is not empty then only do the calculation
+        if (elDisplay.value !== '') {
+            // calculate and show the answer to display
+            elDisplay.value = eval(elDisplay.value);
+        }
+    } else if (clickedButtonValue === 'C') {
+        // clear everything on display
+        elDisplay.value = '';
+    } else {
+        // otherwise concatenate it to the display
+        elDisplay.value += clickedButtonValue;
+    }
 }
-
-
-
-
 
 
 
